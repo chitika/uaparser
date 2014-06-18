@@ -1,0 +1,13 @@
+{application, uaparser,
+ [
+  {description, ""},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  jiffy
+                 ]},
+  {mod, { uaparser_app, []}},
+  {env, []}
+ ]}.
