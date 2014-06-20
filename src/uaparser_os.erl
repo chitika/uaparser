@@ -1,7 +1,7 @@
 -module(uaparser_os).
 -compile({parse_transform, ct_expand}).
 -include("uaparser.hrl").
--export([parse/1, get_operating_systems/0, load_operating_systems/0]).
+-export([parse/1, get_operating_systems/0]).
 
 parse(UserAgent) ->
     make_proplist(find(UserAgent, get_operating_systems()), UserAgent).
@@ -43,17 +43,6 @@ do_get_version_details([Major]) ->
 
 get_operating_systems() ->
     ct_expand:term(uaparser_utils:load_operating_systems()).
-
-load_operating_systems() ->
-    case code:priv_dir(uaparser) of
-        {error, bad_name} ->
-            Dir = "priv/";
-        Dir ->
-            ok
-    end,
-    Path = filename:join(Dir, "operating_systems.json"),
-    {ok, C} = file:read_file(Path),
-    lists:map(fun uaparser_utils:jiffy_to_os/1, jiffy:decode(C)).
 
 find(UserAgent, [OS|Rest]) ->
     case check_useragent(OS, UserAgent) of
