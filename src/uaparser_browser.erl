@@ -54,11 +54,11 @@ find(_UserAgent, []) ->
     undefined.
 
 check_useragent(Browser = #browser{aliases = Aliases, exclusions = Exclusions, children = Children}, UserAgent) ->
-    case is_in_useragent(Aliases, UserAgent) of
+    case contains(Aliases, UserAgent) of
         true ->
             case find(UserAgent, Children) of
                 undefined ->
-                    case contains_exclude_token(Exclusions, UserAgent) of
+                    case contains(Exclusions, UserAgent) of
                         true -> undefined;
                         false -> Browser
                     end;
@@ -69,26 +69,10 @@ check_useragent(Browser = #browser{aliases = Aliases, exclusions = Exclusions, c
             undefined
     end.
 
-is_in_useragent(null, _UserAgent) ->
-    false;
-is_in_useragent([], _UserAgent) ->
-    false;
-is_in_useragent(Aliases, UserAgent) ->
-    lists:any(fun(Alias) -> contains(UserAgent, Alias) end, Aliases).
-
-contains_exclude_token(null, _UserAgent) ->
-    false;
-contains_exclude_token([], _UserAgent) ->
-    false;
-contains_exclude_token(Exclusions, UserAgent) ->
-    lists:any(fun(Token) -> contains(UserAgent, Token) end, Exclusions).
-
-contains(Binary, Token) ->
-    Result = case binary:match(Binary, Token, []) of
-        nomatch -> false;
-        _ -> true
-    end,
-    Result.
+contains([Token|Tokens], Binary) ->
+    binary:match(Binary, Token, []) =/= nomatch orelse contains(Tokens, Binary);
+contains([], _Binary) ->
+    false.
 
 inherit(Child = #browser{version_regex = undefined}, _Parent = #browser{version_regex = RX}) ->
     Child#browser{version_regex = RX};

@@ -7,7 +7,7 @@ parse(UserAgent) ->
     make_proplist(find(UserAgent, get_operating_systems()), UserAgent).
 
 make_proplist(undefined, UserAgent) ->
-    make_proplist(undefined, UserAgent);
+    make_proplist(#os{}, UserAgent);
 make_proplist(OS = #os{name = Name, family = Family, manufacturer = Manufacturer, device_type = DeviceType}, UserAgent) ->
     {Version, Details} = get_version(OS, UserAgent),
     [
@@ -53,11 +53,11 @@ find(_UserAgent, []) ->
     undefined.
 
 check_useragent(OS = #os{aliases = Aliases, exclusions = Exclusions, children = Children}, UserAgent) ->
-    case is_in_useragent(Aliases, UserAgent) of
+    case contains(Aliases, UserAgent) of
         true ->
             case find(UserAgent, Children) of
                 undefined ->
-                    case contains_exclude_token(Exclusions, UserAgent) of
+                    case contains(Exclusions, UserAgent) of
                         true -> undefined;
                         false -> OS
                     end;
@@ -68,26 +68,10 @@ check_useragent(OS = #os{aliases = Aliases, exclusions = Exclusions, children = 
             undefined
     end.
 
-is_in_useragent(null, _UserAgent) ->
-    false;
-is_in_useragent([], _UserAgent) ->
-    false;
-is_in_useragent(Aliases, UserAgent) ->
-    lists:any(fun(Alias) -> contains(UserAgent, Alias) end, Aliases).
-
-contains_exclude_token(null, _UserAgent) ->
-    false;
-contains_exclude_token([], _UserAgent) ->
-    false;
-contains_exclude_token(Exclusions, UserAgent) ->
-    lists:any(fun(Token) -> contains(UserAgent, Token) end, Exclusions).
-
-contains(Binary, Token) ->
-    Result = case binary:match(Binary, Token, []) of
-        nomatch -> false;
-        _ -> true
-    end,
-    Result.
+contains([Token|Tokens], Binary) ->
+    binary:match(Binary, Token, []) =/= nomatch orelse contains(Tokens, Binary);
+contains([], _Binary) ->
+    false.
 
 inherit(Child = #os{version_regex = undefined}, _Parent = #os{version_regex = RX}) ->
     Child#os{version_regex = RX};
