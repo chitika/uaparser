@@ -80,7 +80,7 @@ load_browsers() ->
     {ok, C} = read_priv_file("browsers.json"),
     lists:map(fun uaparser_utils:jiffy_to_browser/1, jiffy:decode(C)).
 
--spec read_priv_file(Filename :: string()) -> iolist().
+-spec read_priv_file(Filename :: string()) -> {'ok', binary()} | {'error', atom()}.
 read_priv_file(Filename) ->
     case code:priv_dir(uaparser) of
         {error, bad_name} ->

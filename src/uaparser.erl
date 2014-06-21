@@ -2,6 +2,7 @@
 -export([parse/1]).
 -include("uaparser.hrl").
 
+-spec parse(binary()) -> [{os|browser, [{atom(), ua_value()}]}].
 parse(UserAgent) when is_list(UserAgent) ->
     parse(iolist_to_binary(UserAgent));
 parse(UserAgent) when is_binary(UserAgent) ->
