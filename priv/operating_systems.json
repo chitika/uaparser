@@ -305,6 +305,7 @@
         "name": "mac os x",
         "manufacturer": "apple",
         "device_type": "computer",
+        "version_regex": "mac os ?x (([0-9]+)(?:[_\\.]([0-9]+))?(?:[_\\.]([0-9]+))?)",
         "aliases":         [
             "mac os x",
             "cfnetwork"

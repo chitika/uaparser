@@ -801,7 +801,7 @@
         "manufacturer": "mozilla",
         "browser_type": "web_browser",
         "rendering_engine": "gecko",
-        "version_regex": "firefox\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+        "version_regex": "firefox/(([0-9]+)(?:\\.([0-9]+))?(?:[ab\\.]([0-9]+))?(?:[ab\\.]([0-9]+))?)",
         "aliases": ["firefox"],
         "exclusions": ["ggpht.com"],
         "children":         [
