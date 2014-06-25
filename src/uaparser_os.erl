@@ -24,12 +24,12 @@ make_proplist(OS = #os{name = Name, family = Family, manufacturer = Manufacturer
 -spec get_version(OS :: #os{}, UserAgent :: binary()) -> {binary(), version_details()}.
 get_version(_ = #os{version_regex = undefined}, _UserAgent) ->
     {<<"0">>, []};
-get_version(OS = #os{version_regex = RX}, UserAgent) ->
+get_version(_ = #os{version_regex = RX}, UserAgent) ->
     case re:run(UserAgent, RX, [{capture, all_but_first, binary}]) of
         {match, [FullVersion|Rest]} ->
             {FullVersion, get_version_details(Rest)};
         nomatch ->
-            error({badmatch, OS, UserAgent})
+            {<<"0">>, []}
     end.
 
 -spec get_version_details(Details :: [binary()]) -> version_details().

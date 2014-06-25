@@ -25,12 +25,12 @@ make_proplist(Browser = #browser{name = Name, family = Family, manufacturer = Ma
 -spec get_version(Browser :: #browser{}, UserAgent :: binary()) -> {binary(), version_details()}.
 get_version(_ = #browser{version_regex = undefined}, _UserAgent) ->
     {<<"0">>, []};
-get_version(Browser = #browser{version_regex = RX}, UserAgent) ->
+get_version(_ = #browser{version_regex = RX}, UserAgent) ->
     case re:run(UserAgent, RX, [{capture, all_but_first, binary}]) of
         {match, [FullVersion|Rest]} ->
             {FullVersion, get_version_details(Rest)};
         nomatch ->
-            error({badmatch, Browser, UserAgent})
+            {<<"0">>, []}
     end.
 
 -spec get_version_details(Details :: [binary()]) -> version_details().
