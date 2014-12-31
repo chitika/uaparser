@@ -1,6 +1,6 @@
 -module(uaparser_utils).
 -compile({parse_transform, ct_expand}).
--include("uaparser.hrl").
+-include("../include/uaparser.hrl").
 -export([
         bin_to_num/1,
         jiffy_to_browser/1,
@@ -72,21 +72,8 @@ bin_to_num(Binary) when is_binary(Binary) ->
 
 -spec load_operating_systems() -> [#os{}].
 load_operating_systems() ->
-    {ok, C} = read_priv_file("operating_systems.json"),
-    lists:map(fun jiffy_to_os/1, jiffy:decode(C)).
+    lists:map(fun uaparser_utils:jiffy_to_os/1, uaparser_os_and_browsers:operating_systems()).
 
 -spec load_browsers() -> [#browser{}].
 load_browsers() ->
-    {ok, C} = read_priv_file("browsers.json"),
-    lists:map(fun uaparser_utils:jiffy_to_browser/1, jiffy:decode(C)).
-
--spec read_priv_file(Filename :: string()) -> {'ok', binary()} | {'error', atom()}.
-read_priv_file(Filename) ->
-    case code:priv_dir(uaparser) of
-        {error, bad_name} ->
-            Dir = "priv/";
-        Dir ->
-            ok
-    end,
-    Path = filename:join(Dir, Filename),
-    file:read_file(Path).
+    lists:map(fun uaparser_utils:jiffy_to_browser/1, uaparser_os_and_browsers:browsers()).
