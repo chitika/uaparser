@@ -8,6 +8,6 @@ parse(UserAgent) when is_list(UserAgent) ->
 parse(UserAgent) when is_binary(UserAgent) ->
     Lower = list_to_binary(string:to_lower(binary_to_list(UserAgent))),
     [
-        {browser, uaparser_browser:parse(Lower)},
-        {os, uaparser_os:parse(Lower)}
+        {browser, uaparser_browser:parse(Lower)}
+%%         {os, uaparser_os:parse(Lower)}
     ].
