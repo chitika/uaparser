@@ -1,0 +1,6 @@
+.idea/
+deps/
+ebin/
+rebar
+uaparser.iml
+
