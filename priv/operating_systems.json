@@ -4,13 +4,23 @@
         "name": "windows",
         "manufacturer": "microsoft",
         "device_type": "computer",
-        "version_regex": "windows (?:nt|(?:phone(?: os)?))? (([0-9]+)(?:\\.([0-9]+)))",
         "aliases": ["windows"],
         "exclusions":         [
             "palm",
             "ggpht.com"
         ],
         "children":         [
+                        {
+                "family": "windows",
+                "name": "windows 10",
+                "manufacturer": "microsoft",
+                "device_type": "computer",
+                "aliases":                 [
+                    "windows nt 6.4",
+                    "windows nt 10"
+                ],
+                "children": []
+            },
                         {
                 "family": "windows",
                 "name": "windows 8.1",
@@ -25,6 +35,10 @@
                 "manufacturer": "microsoft",
                 "device_type": "computer",
                 "aliases": ["windows nt 6.2"],
+                "exclusions":                 [
+                    "xbox",
+                    "xbox one"
+                ],
                 "children": []
             },
                         {
@@ -33,6 +47,10 @@
                 "manufacturer": "microsoft",
                 "device_type": "computer",
                 "aliases": ["windows nt 6.1"],
+                "exclusions":                 [
+                    "xbox",
+                    "xbox one"
+                ],
                 "children": []
             },
                         {
@@ -41,6 +59,10 @@
                 "manufacturer": "microsoft",
                 "device_type": "computer",
                 "aliases": ["windows nt 6"],
+                "exclusions":                 [
+                    "xbox",
+                    "xbox one"
+                ],
                 "children": []
             },
                         {
@@ -58,6 +80,14 @@
                 "device_type": "computer",
                 "aliases": ["windows nt 5"],
                 "exclusions": ["ggpht.com"],
+                "children": []
+            },
+                        {
+                "family": "windows",
+                "name": "windows 10 mobile",
+                "manufacturer": "microsoft",
+                "device_type": "mobile",
+                "aliases": ["windows phone 10"],
                 "children": []
             },
                         {
@@ -103,6 +133,15 @@
                 ],
                 "exclusions": ["palm"],
                 "children": []
+            },
+                        {
+                "family": "windows",
+                "name": "xbox os",
+                "manufacturer": "microsoft",
+                "device_type": "game_console",
+                "aliases": ["xbox"],
+                "exclusions": [],
+                "children": []
             }
         ]
     },
@@ -111,9 +150,35 @@
         "name": "android",
         "manufacturer": "google",
         "device_type": "mobile",
-        "version_regex": "android (([0-9]+)\\.([0-9]+)(?:\\.([0-9]+))?)",
         "aliases": ["android"],
+        "exclusions": ["ubuntu"],
         "children":         [
+                        {
+                "family": "android",
+                "name": "android 5.x",
+                "manufacturer": "google",
+                "device_type": "mobile",
+                "aliases":                 [
+                    "android 5",
+                    "android-5"
+                ],
+                "exclusions": ["glass"],
+                "children": [                {
+                    "family": "android",
+                    "name": "android 5.x tablet",
+                    "manufacturer": "google",
+                    "device_type": "tablet",
+                    "aliases":                     [
+                        "android 5",
+                        "android-5"
+                    ],
+                    "exclusions":                     [
+                        "mobile",
+                        "glass"
+                    ],
+                    "children": []
+                }]
+            },
                         {
                 "family": "android",
                 "name": "android 4.x",
@@ -122,6 +187,10 @@
                 "aliases":                 [
                     "android 4",
                     "android-4"
+                ],
+                "exclusions":                 [
+                    "glass",
+                    "ubuntu"
                 ],
                 "children": [                {
                     "family": "android",
@@ -132,9 +201,22 @@
                         "android 4",
                         "android-4"
                     ],
-                    "exclusions": ["mobile"],
+                    "exclusions":                     [
+                        "mobile",
+                        "glass",
+                        "ubuntu"
+                    ],
                     "children": []
                 }]
+            },
+                        {
+                "family": "android",
+                "name": "android 4.x",
+                "manufacturer": "google",
+                "device_type": "wearable",
+                "aliases": ["android 4"],
+                "exclusions": ["ubuntu"],
+                "children": []
             },
                         {
                 "family": "android",
@@ -177,6 +259,7 @@
                 "manufacturer": "google",
                 "device_type": "mobile",
                 "aliases": ["mobile"],
+                "exclusions": ["ubuntu"],
                 "children": []
             },
                         {
@@ -190,11 +273,18 @@
         ]
     },
         {
+        "family": "chrome_os",
+        "name": "chrome os",
+        "manufacturer": "google",
+        "device_type": "computer",
+        "aliases": ["cros"],
+        "children": []
+    },
+        {
         "family": "webos",
         "name": "webos",
         "manufacturer": "hp",
         "device_type": "mobile",
-        "version_regex": "webos\\/(([0-9]+)(?:\\.([0-9]+))?(?:\\.([0-9]+))?(?:\\.([0-9]+))?)",
         "aliases": ["webos"],
         "children": []
     },
@@ -219,12 +309,59 @@
         "name": "ios",
         "manufacturer": "apple",
         "device_type": "mobile",
-        "version_regex": "cpu(?: iphone)? os (([0-9]+)(?:_([0-9]+))?(?:_([0-9]+))?)",
         "aliases":         [
             "iphone os",
             "like mac os x"
         ],
         "children":         [
+                        {
+                "family": "ios",
+                "name": "ios 9 (iphone)",
+                "manufacturer": "apple",
+                "device_type": "mobile",
+                "aliases": ["iphone os 9"],
+                "children": []
+            },
+                        {
+                "family": "ios",
+                "name": "ios 8.4 (iphone)",
+                "manufacturer": "apple",
+                "device_type": "mobile",
+                "aliases": ["iphone os 8_4"],
+                "children": []
+            },
+                        {
+                "family": "ios",
+                "name": "ios 8.3 (iphone)",
+                "manufacturer": "apple",
+                "device_type": "mobile",
+                "aliases": ["iphone os 8_3"],
+                "children": []
+            },
+                        {
+                "family": "ios",
+                "name": "ios 8.2 (iphone)",
+                "manufacturer": "apple",
+                "device_type": "mobile",
+                "aliases": ["iphone os 8_2"],
+                "children": []
+            },
+                        {
+                "family": "ios",
+                "name": "ios 8.1 (iphone)",
+                "manufacturer": "apple",
+                "device_type": "mobile",
+                "aliases": ["iphone os 8_1"],
+                "children": []
+            },
+                        {
+                "family": "ios",
+                "name": "ios 8 (iphone)",
+                "manufacturer": "apple",
+                "device_type": "mobile",
+                "aliases": ["iphone os 8"],
+                "children": []
+            },
                         {
                 "family": "ios",
                 "name": "ios 7 (iphone)",
@@ -266,6 +403,54 @@
                 "children":                 [
                                         {
                         "family": "ios",
+                        "name": "ios 9 (ipad)",
+                        "manufacturer": "apple",
+                        "device_type": "tablet",
+                        "aliases": ["os 9"],
+                        "children": []
+                    },
+                                        {
+                        "family": "ios",
+                        "name": "ios 8.4 (ipad)",
+                        "manufacturer": "apple",
+                        "device_type": "tablet",
+                        "aliases": ["os 8_4"],
+                        "children": []
+                    },
+                                        {
+                        "family": "ios",
+                        "name": "ios 8.3 (ipad)",
+                        "manufacturer": "apple",
+                        "device_type": "tablet",
+                        "aliases": ["os 8_3"],
+                        "children": []
+                    },
+                                        {
+                        "family": "ios",
+                        "name": "ios 8.2 (ipad)",
+                        "manufacturer": "apple",
+                        "device_type": "tablet",
+                        "aliases": ["os 8_2"],
+                        "children": []
+                    },
+                                        {
+                        "family": "ios",
+                        "name": "ios 8.1 (ipad)",
+                        "manufacturer": "apple",
+                        "device_type": "tablet",
+                        "aliases": ["os 8_1"],
+                        "children": []
+                    },
+                                        {
+                        "family": "ios",
+                        "name": "ios 8 (ipad)",
+                        "manufacturer": "apple",
+                        "device_type": "tablet",
+                        "aliases": ["os 8_0"],
+                        "children": []
+                    },
+                                        {
+                        "family": "ios",
                         "name": "ios 7 (ipad)",
                         "manufacturer": "apple",
                         "device_type": "tablet",
@@ -305,7 +490,6 @@
         "name": "mac os x",
         "manufacturer": "apple",
         "device_type": "computer",
-        "version_regex": "mac os ?x (([0-9]+)(?:[_\\.]([0-9]+))?(?:[_\\.]([0-9]+))?)",
         "aliases":         [
             "mac os x",
             "cfnetwork"
@@ -378,7 +562,21 @@
             "linux",
             "camelhttpstream"
         ],
-        "children": []
+        "children": [        {
+            "family": "linux",
+            "name": "ubuntu",
+            "manufacturer": "cononical",
+            "device_type": "computer",
+            "aliases": ["ubuntu"],
+            "children": [            {
+                "family": "linux",
+                "name": "ubuntu touch (mobile)",
+                "manufacturer": "cononical",
+                "device_type": "mobile",
+                "aliases": ["mobile"],
+                "children": []
+            }]
+        }]
     },
         {
         "family": "symbian",
