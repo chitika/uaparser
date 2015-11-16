@@ -1,11 +1,11 @@
-{"0.1.2", [
-        {"0.1.1", [
+{"0.2.0", [
+        {"0.1.2", [
                 {load_module, uaparser_browser},
                 {load_module, uaparser_os},
             ]}
     ],
     [
-        {"0.1.1", [
+        {"0.1.2", [
                 {load_module, uaparser_browser},
                 {load_module, uaparser_os},
             ]}
