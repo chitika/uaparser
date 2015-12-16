@@ -52,6 +52,11 @@
             "trident",
             "ie "
         ],
+        "exclusions":         [
+            "bingpreview",
+            "xbox",
+            "xbox one"
+        ],
         "children":         [
                         {
                 "family": "ie",
@@ -109,6 +114,16 @@
             },
                         {
                 "family": "ie",
+                "name": "xbox",
+                "manufacturer": "microsoft",
+                "browser_type": "web_browser",
+                "rendering_engine": "trident",
+                "aliases": ["xbox"],
+                "exclusions": [],
+                "children": []
+            },
+                        {
+                "family": "ie",
                 "name": "internet explorer 11",
                 "manufacturer": "microsoft",
                 "browser_type": "web_browser",
@@ -118,7 +133,10 @@
                     "trident/7",
                     "ie 11."
                 ],
-                "exclusions": ["msie 7"],
+                "exclusions":                 [
+                    "msie 7",
+                    "bingpreview"
+                ],
                 "children": []
             },
                         {
@@ -187,6 +205,41 @@
         ]
     },
         {
+        "family": "edge",
+        "name": "microsoft edge",
+        "manufacturer": "microsoft",
+        "browser_type": "web_browser",
+        "rendering_engine": "edge_html",
+        "version_regex": "(?:edge\\/((12)\\.([0-9]*)))",
+        "aliases": ["edge"],
+        "children":         [
+                        {
+                "family": "edge",
+                "name": "microsoft edge",
+                "manufacturer": "microsoft",
+                "browser_type": "web_browser",
+                "rendering_engine": "edge_html",
+                "version_regex": "(?:edge\\/((12)\\.([0-9]*)))",
+                "aliases": ["edge/12"],
+                "exclusions": ["mobile"],
+                "children": []
+            },
+                        {
+                "family": "edge",
+                "name": "microsoft edge mobile",
+                "manufacturer": "microsoft",
+                "browser_type": "mobile_browser",
+                "rendering_engine": "edge_html",
+                "version_regex": "(?:edge\\/((12)\\.([0-9]*)))",
+                "aliases":                 [
+                    "mobile safari",
+                    "edge/12"
+                ],
+                "children": []
+            }
+        ]
+    },
+        {
         "family": "chrome",
         "name": "chrome",
         "manufacturer": "google",
@@ -200,7 +253,8 @@
         ],
         "exclusions":         [
             "opr/",
-            "web preview"
+            "web preview",
+            "vivaldi"
         ],
         "children":         [
                         {
@@ -214,6 +268,183 @@
                     "crmo",
                     "crios",
                     "mobile safari"
+                ],
+                "exclusions": ["opr/"],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 46",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/46"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview",
+                    "vivaldi"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 45",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/45"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview",
+                    "vivaldi"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 44",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/44"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview",
+                    "vivaldi"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 43",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/43"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview",
+                    "vivaldi"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 42",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/42"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview",
+                    "vivaldi"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 41",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/41"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview",
+                    "vivaldi"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 40",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/40"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview",
+                    "vivaldi"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 39",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/39"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 38",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/38"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 37",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/37"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 36",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/36"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 35",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/35"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
+                "children": []
+            },
+                        {
+                "family": "chrome",
+                "name": "chrome 34",
+                "manufacturer": "google",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["chrome/34"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
                 ],
                 "children": []
             },
@@ -302,7 +533,10 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "webkit",
                 "aliases": ["chrome/27"],
-                "exclusions": ["web preview"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
                 "children": []
             },
                         {
@@ -312,7 +546,10 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "webkit",
                 "aliases": ["chrome/26"],
-                "exclusions": ["web preview"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
                 "children": []
             },
                         {
@@ -322,7 +559,10 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "webkit",
                 "aliases": ["chrome/25"],
-                "exclusions": ["web preview"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
                 "children": []
             },
                         {
@@ -332,7 +572,10 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "webkit",
                 "aliases": ["chrome/24"],
-                "exclusions": ["web preview"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
                 "children": []
             },
                         {
@@ -342,7 +585,10 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "webkit",
                 "aliases": ["chrome/23"],
-                "exclusions": ["web preview"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
                 "children": []
             },
                         {
@@ -352,7 +598,10 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "webkit",
                 "aliases": ["chrome/22"],
-                "exclusions": ["web preview"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
                 "children": []
             },
                         {
@@ -362,7 +611,10 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "webkit",
                 "aliases": ["chrome/21"],
-                "exclusions": ["web preview"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
                 "children": []
             },
                         {
@@ -372,7 +624,10 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "webkit",
                 "aliases": ["chrome/20"],
-                "exclusions": ["web preview"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
                 "children": []
             },
                         {
@@ -382,7 +637,10 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "webkit",
                 "aliases": ["chrome/19"],
-                "exclusions": ["web preview"],
+                "exclusions":                 [
+                    "opr/",
+                    "web preview"
+                ],
                 "children": []
             },
                         {
@@ -504,9 +762,13 @@
         "version_regex": "version\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?)",
         "aliases": ["safari"],
         "exclusions":         [
+            "bot",
+            "preview",
             "opr/",
-            "web preview",
-            "googlebot-mobile"
+            "coast/",
+            "vivaldi",
+            "cfnetwork",
+            "phantom"
         ],
         "children":         [
                         {
@@ -528,7 +790,14 @@
                     "mobile safari",
                     "mobile/"
                 ],
-                "exclusions": ["googlebot-mobile"],
+                "exclusions":                 [
+                    "bot",
+                    "preview",
+                    "opr/",
+                    "coast/",
+                    "vivaldi",
+                    "cfnetwork"
+                ],
                 "children": []
             },
                         {
@@ -539,6 +808,36 @@
                 "rendering_engine": "webkit",
                 "version_regex": "silk\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\-[\\w]+)?)",
                 "aliases": ["silk/"],
+                "children": []
+            },
+                        {
+                "family": "safari",
+                "name": "safari 9",
+                "manufacturer": "apple",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["version/9"],
+                "exclusions": ["applebot"],
+                "children": []
+            },
+                        {
+                "family": "safari",
+                "name": "safari 8",
+                "manufacturer": "apple",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["version/8"],
+                "exclusions": ["applebot"],
+                "children": []
+            },
+                        {
+                "family": "safari",
+                "name": "safari 7",
+                "manufacturer": "apple",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "aliases": ["version/7"],
+                "exclusions": ["bing"],
                 "children": []
             },
                         {
@@ -557,6 +856,7 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "webkit",
                 "aliases": ["version/5"],
+                "exclusions": ["google web preview"],
                 "children": []
             },
                         {
@@ -572,12 +872,31 @@
         ]
     },
         {
+        "family": "coast",
+        "name": "opera",
+        "manufacturer": "opera",
+        "browser_type": "mobile_browser",
+        "rendering_engine": "webkit",
+        "version_regex": "coast\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+        "aliases": [" coast/"],
+        "children": [        {
+            "family": "coast",
+            "name": "opera",
+            "manufacturer": "opera",
+            "browser_type": "mobile_browser",
+            "rendering_engine": "webkit",
+            "version_regex": "coast\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+            "aliases": [" coast/1."],
+            "children": []
+        }]
+    },
+        {
         "family": "opera",
         "name": "opera",
         "manufacturer": "opera",
         "browser_type": "web_browser",
         "rendering_engine": "presto",
-        "version_regex": "opera\\/(([\\d]+)\\.([\\w]+))",
+        "version_regex": "[o][p][e]?[r][a]?\\/(([\\d]+)\\.([\\w]+)(\\.([\\w]+))?(\\.([\\w]+))?)",
         "aliases":         [
             " opr/",
             "opera"
@@ -585,11 +904,141 @@
         "children":         [
                         {
                 "family": "opera",
+                "name": "opera mobile",
+                "manufacturer": "opera",
+                "browser_type": "mobile_browser",
+                "rendering_engine": "blink",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["mobile safari"],
+                "children": []
+            },
+                        {
+                "family": "opera",
                 "name": "opera mini",
                 "manufacturer": "opera",
                 "browser_type": "mobile_browser",
                 "rendering_engine": "presto",
                 "aliases": ["opera mini"],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 34",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/34."],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 33",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/33."],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 32",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/32."],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 31",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/31."],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 30",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/30."],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 29",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/29."],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 28",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/28."],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 27",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/27."],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 26",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/26."],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 25",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/25."],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 24",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/24."],
+                "children": []
+            },
+                        {
+                "family": "opera",
+                "name": "opera 23",
+                "manufacturer": "opera",
+                "browser_type": "web_browser",
+                "rendering_engine": "webkit",
+                "version_regex": "opr\\/(([\\d]+)\\.([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
+                "aliases": ["opr/23."],
                 "children": []
             },
                         {
@@ -704,6 +1153,7 @@
         "rendering_engine": "khtml",
         "version_regex": "konqueror\\/(([0-9]+)\\.?([\\w]+)?(-[\\w]+)?)",
         "aliases": ["konqueror"],
+        "exclusions": ["exabot"],
         "children": []
     },
         {
@@ -723,9 +1173,12 @@
         "rendering_engine": "webkit",
         "aliases": ["applewebkit"],
         "exclusions":         [
+            "bot",
+            "preview",
             "opr/",
-            "web preview",
-            "googlebot-mobile"
+            "coast/",
+            "vivaldi",
+            "phantom"
         ],
         "children":         [
                         {
@@ -801,9 +1254,12 @@
         "manufacturer": "mozilla",
         "browser_type": "web_browser",
         "rendering_engine": "gecko",
-        "version_regex": "firefox/(([0-9]+)(?:\\.([0-9]+))?(?:[ab\\.]([0-9]+))?(?:[ab\\.]([0-9]+))?)",
+        "version_regex": "firefox\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)",
         "aliases": ["firefox"],
-        "exclusions": ["ggpht.com"],
+        "exclusions":         [
+            "ggpht.com",
+            "wordpress.com mshots"
+        ],
         "children":         [
                         {
                 "family": "firefox",
@@ -830,6 +1286,114 @@
                     "aliases": ["firefox/23"],
                     "children": []
                 }]
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 42",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/42"],
+                "children": []
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 41",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/41"],
+                "children": []
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 40",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/40"],
+                "children": []
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 39",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/39"],
+                "children": []
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 38",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/38"],
+                "children": []
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 37",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/37"],
+                "children": []
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 36",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/36"],
+                "children": []
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 35",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/35"],
+                "children": []
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 34",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/34"],
+                "children": []
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 33",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/33"],
+                "children": []
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 32",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/32"],
+                "children": []
+            },
+                        {
+                "family": "firefox",
+                "name": "firefox 31",
+                "manufacturer": "mozilla",
+                "browser_type": "web_browser",
+                "rendering_engine": "gecko",
+                "aliases": ["firefox/31"],
+                "children": []
             },
                         {
                 "family": "firefox",
@@ -919,6 +1483,7 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "gecko",
                 "aliases": ["firefox/21"],
+                "exclusions": ["wordpress.com mshots"],
                 "children": []
             },
                         {
@@ -1091,6 +1656,7 @@
                 "browser_type": "web_browser",
                 "rendering_engine": "gecko",
                 "aliases": ["firefox/2"],
+                "exclusions": ["wordpress.com mshots"],
                 "children": []
             },
                         {
@@ -1188,6 +1754,17 @@
         ]
     },
         {
+        "family": "vivaldi",
+        "name": "vivaldi",
+        "manufacturer": "other",
+        "browser_type": "web_browser",
+        "rendering_engine": "blink",
+        "version_regex": "vivaldi/(([\\d]+).([\\d]+).([\\d]+).([\\d]+))",
+        "aliases": ["vivaldi"],
+        "exclusions": [],
+        "children": []
+    },
+        {
         "family": "seamonkey",
         "name": "seamonkey",
         "manufacturer": "other",
@@ -1205,15 +1782,27 @@
         "rendering_engine": "other",
         "aliases":         [
             "googlebot",
+            "mediapartners-google",
             "web preview",
             "bot",
+            "applebot",
             "spider",
             "crawler",
             "feedfetcher",
             "slurp",
             "twiceler",
             "nutch",
-            "becomebot"
+            "becomebot",
+            "bingbot",
+            "bingpreview",
+            "google web preview",
+            "wordpress.com mshots",
+            "seznam",
+            "facebookexternalhit",
+            "yandexmarket",
+            "teoma",
+            "thumbsniper",
+            "phantom"
         ],
         "children": [        {
             "family": "bot",
@@ -1244,6 +1833,7 @@
         "manufacturer": "other",
         "browser_type": "unknown",
         "rendering_engine": "other",
+        "version_regex": "cfnetwork/(([\\d]+)(?:\\.([\\d]))?(?:\\.([\\d]+))?)",
         "aliases": ["cfnetwork"],
         "children": []
     },
