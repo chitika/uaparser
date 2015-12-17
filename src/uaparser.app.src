@@ -1,7 +1,7 @@
 {application, uaparser,
  [
   {description, "User Agent Parser"},
-  {vsn, "0.2.0"},
+  {vsn, "0.2.0a"},
   {registered, []},
   {applications, [
                   kernel,
